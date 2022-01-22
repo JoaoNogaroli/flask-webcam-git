@@ -30,6 +30,7 @@ def index():
 @app.route('/video')    
 def video():
     print('----funcaovideooo----')
+    print(f"MEU IP ---{request.remote_addr}")
     return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__=="__main__":
