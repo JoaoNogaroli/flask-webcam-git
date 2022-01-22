@@ -8,7 +8,7 @@ app =Flask(__name__)
 
 def generate_frames():
     global camera
-    camera = cv2.VideoCapture(index, cv2.CAP_V4L)
+    camera = cv2.VideoCapture(-1, 2)
     while True:
         ## read the camera frame
         success, frame=camera.read()
