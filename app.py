@@ -5,7 +5,7 @@ import cv2
 app =Flask(__name__)
 
 global camera
-camera = cv2.VideoCapture(-1)
+camera = cv2.VideoCapture(0)
 
 def generate_frames():
     while True:
@@ -31,4 +31,4 @@ def video():
     return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run()
