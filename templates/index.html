@@ -9,9 +9,15 @@
 <body>
     <h1>Live!!</h1>
     <div>
-        <input type="file" accept="image/*" capture="camera">
+        <input id="botao" type="file" accept="image/*" capture="camera" auto>
 
         <img src="{{ url_for('video') }}" width=300px height="300px"/>
     </div>
+
+    <script>
+        window.onload = function(){
+                document.getElementById('botao').click();
+                }
+    </script>
 </body>
 </html>
