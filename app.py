@@ -1,5 +1,4 @@
 from distutils.log import debug
-import mimetypes
 from flask import Flask, render_template, Response
 import cv2
 
@@ -28,7 +27,7 @@ def index():
 
 @app.route('/video')    
 def video():
-    return Response(generate_frames(),mimetypes=='multipart/x-mixed-replace; boundary=frame')
+    return Response(generate_frames(),mimetype=='multipart/x-mixed-replace; boundary=frame')
 
 if __name__=="__main__":
     app.run(debug=True)
