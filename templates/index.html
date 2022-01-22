@@ -9,7 +9,9 @@
 <body>
     <h1>Live!!</h1>
     <div>
-        <img src="{{ url_for('video') }}" width=30%/>
+        <input type="file" accept="image/*" capture="camera">
+
+        <img src="{{ url_for('video') }}" width=300px height="300px"/>
     </div>
 </body>
 </html>
