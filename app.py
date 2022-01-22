@@ -1,5 +1,5 @@
 from distutils.log import debug
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
 import cv2
 
 app =Flask(__name__)
@@ -8,7 +8,7 @@ app =Flask(__name__)
 
 def generate_frames():
     global camera
-    camera = cv2.VideoCapture(-1, cv2.CAP_V4L)
+    camera = cv2.VideoCapture(request.remote_addr,2)
     while True:
         ## read the camera frame
         success, frame=camera.read()
